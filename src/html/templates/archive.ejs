@@ -1,0 +1,46 @@
+<%- include('../partials/head') -%>
+
+<body class="bg-white">
+    <header
+        class="header flex items-center justify-between flex-row py-5 px-5 border-solid border-border-grey border-b">
+        <a href="../index.html">
+            <img src="../assets/images/icn_back.svg" alt="">
+        </a>
+        <h3 class="text-18px font-bold">Archive</h3>
+        <a href="../settings/index.html">
+            <img src="../assets/images/ic_settings_24px.svg" alt="">
+        </a>
+    </header>
+    <div class="bg-white p-4 border-solid border-utility-bordergrey border-b">
+        <form class="w-full max-w-sm">
+            <div class="flex justify-between items-center  bg-utility-inputgrey rounded p-2">
+                <input type="text" placeholder='Search news' class="input pl-5 outline-none bg-utility-inputgrey">
+                <button type="submit"><img src="../assets/images/icn_search_dark.svg" alt="" class="pr-2"></button>
+            </div>
+        </form>
+    </div>
+    <div class="bg-white p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
+        <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
+            <img src="../assets/images/icn_surfing.svg" alt="">
+        </div>
+        <div class="flex flex-row justify-between content-center w-5/6">
+            <h3 class="text-15px font-bold">Category</h3>
+            <img class="transform -rotate-90" src="../assets/images/icn_back.svg" alt="">
+        </div>
+    </div>
+    <ul class="border-solid border-utility-bordergrey border-b">
+        <li class="w-full max-w-sm flex flex-row">
+            <img src="../assets/images/icn_avatar.svg" alt="" class="m-4">
+            <article class="mr-4 my-4">
+                <h4 class="font-bold text-15px">Heading</h4>
+                <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem, ipsum dolor sit
+                    amet
+                    consectetur
+                    adipisicing elit.
+                    Architecto voluptatem quis mollitia iure? Totam provident praesentium ea fugit saepe! Dolorum!
+                </p>
+            </article>
+        </li>
+    </ul>
+
+    <%- include('../partials/after-footer') -%>

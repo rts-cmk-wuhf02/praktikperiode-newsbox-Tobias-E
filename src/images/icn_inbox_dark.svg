@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="18" viewBox="0 0 20 18">
+  <defs>
+    <clipPath id="clip-path">
+      <rect width="20" height="18" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="icn_inbox_dark" clip-path="url(#clip-path)">
+    <path id="Path_57" data-name="Path 57" d="M6,10H1c.7-3.3,1.3-5.7,2-9H17l2,9H15" fill="none" stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_58" data-name="Path 58" d="M12,10h7v7H1V10H8" fill="none" stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+    <path id="Path_59" data-name="Path 59" d="M8,10a2,2,0,0,0,4,0" fill="none" stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2"/>
+  </g>
+</svg>
