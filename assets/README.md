@@ -1,1 +1,0 @@
-Illustrationer til opgave beskrivelsen!
