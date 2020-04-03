@@ -1,17 +1,30 @@
 <%- include('../partials/head') -%>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
 
-<body class="bg-white">
+<body class="bg-utility-newsbg">
     <header
-        class="header flex items-center justify-between flex-row py-5 px-5 border-solid border-border-grey border-b">
+        class="header bg-utility-newsbg flex items-center justify-between flex-row py-5 px-5 border-solid border-border-grey border-b">
         <a href="../index.html">
-            <img src="../assets/images/icn_back.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10.823" height="16.857" viewBox="0 0 10.823 16.857">
+                <g id="icn_back" transform="translate(41.596 42.892) rotate(180)">
+                    <line id="Line_17" data-name="Line 17" y1="6.981" x2="8" transform="translate(32.185 34.5)"
+                        fill="none" stroke="#324755" stroke-linecap="round" stroke-width="2" />
+                    <path id="Path_44" data-name="Path 44" d="M1.079-.035,9,7" transform="translate(31.185 27.481)"
+                        fill="#324755" stroke="#334856" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
         </a>
-        <h3 class="text-18px font-bold">Archive</h3>
-        <a href="../settings/index.html">
-            <img src="../assets/images/ic_settings_24px.svg" alt="">
+        <h3 class="text-18px text-typography-onyx font-bold">Archive</h3>
+        <a href="../settings/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="19.454" height="20"
+                viewBox="0 0 19.454 20">
+                <path id="ic_settings_24px"
+                    d="M19.43,12.98A7.793,7.793,0,0,0,19.5,12a7.793,7.793,0,0,0-.07-.98l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.306,7.306,0,0,0-1.69-.98l-.38-2.65A.488.488,0,0,0,14,2H10a.488.488,0,0,0-.49.42L9.13,5.07a7.683,7.683,0,0,0-1.69.98l-2.49-1a.488.488,0,0,0-.61.22l-2,3.46a.493.493,0,0,0,.12.64l2.11,1.65A7.931,7.931,0,0,0,4.5,12a7.931,7.931,0,0,0,.07.98L2.46,14.63a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.306,7.306,0,0,0,1.69.98l.38,2.65A.488.488,0,0,0,10,22h4a.488.488,0,0,0,.49-.42l.38-2.65a7.683,7.683,0,0,0,1.69-.98l2.49,1a.488.488,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                    transform="translate(-2.271 -2)" fill="#324755" />
+            </svg>
         </a>
     </header>
-    <div class="bg-white p-4 border-solid border-utility-bordergrey border-b">
+    <div class="bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b">
         <form class="w-full max-w-sm">
             <div class="flex justify-between items-center  bg-utility-inputgrey rounded p-2">
                 <input type="text" placeholder='Search news' class="input pl-5 outline-none bg-utility-inputgrey">
@@ -19,20 +32,28 @@
             </div>
         </form>
     </div>
-    <div class="bg-white p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
+    <div class="bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
         <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
             <img src="../assets/images/icn_surfing.svg" alt="">
         </div>
         <div class="flex flex-row justify-between content-center w-5/6">
-            <h3 class="text-15px font-bold">Category</h3>
-            <img class="transform -rotate-90" src="../assets/images/icn_back.svg" alt="">
+            <h3 class="text-15px text-typography-onyx font-bold">Category</h3>
+            <svg class="transform -rotate-90 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" width="10.823"
+                height="16.857" viewBox="0 0 10.823 16.857">
+                <g id="icn_back" transform="translate(41.596 42.892) rotate(180)">
+                    <line id="Line_17" data-name="Line 17" y1="6.981" x2="8" transform="translate(32.185 34.5)"
+                        fill="none" stroke="#324755" stroke-linecap="round" stroke-width="2" />
+                    <path id="Path_44" data-name="Path 44" d="M1.079-.035,9,7" transform="translate(31.185 27.481)"
+                        fill="#324755" stroke="#334856" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
         </div>
     </div>
     <ul class="border-solid border-utility-bordergrey border-b">
         <li class="w-full max-w-sm flex flex-row">
             <img src="../assets/images/icn_avatar.svg" alt="" class="m-4">
             <article class="mr-4 my-4">
-                <h4 class="font-bold text-15px">Heading</h4>
+                <h4 class="font-bold text-typography-onyx text-15px">Heading</h4>
                 <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem, ipsum dolor sit
                     amet
                     consectetur
@@ -42,5 +63,6 @@
             </article>
         </li>
     </ul>
+    <script src="../assets/javascript/getTheme.js"></script>
 
     <%- include('../partials/after-footer') -%>

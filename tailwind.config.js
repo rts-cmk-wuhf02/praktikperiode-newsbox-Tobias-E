@@ -20,21 +20,22 @@ module.exports = {
 					danger: '#D95454'
 				},
 				secondary: {
-					ice: '#F0F3F4',
+					ice: 'var(--ice)',
 					fossil: '#C8D1D3',
 					sand: '#B9B0A2'
 				},
 				typography: {
-					onyx: '#1B1C20',
-					slate: '#6E8CA0',
-					snow: '#FFFFFF',
+					onyx: 'var(--onyx)',
+					slate: 'var(--slate)',
+					snow: 'var(--snow)',
 					pblue: '#6E8CA0',
-					grey: '#707070'
+					grey: 'var(--typography-grey)'
 				},
 				utility: {
 					bordergrey: '#E0E1E2',
 					inputgrey: '#F0F3F4',
-					settingsbg: '#ECEFF0'
+					settingsbg: 'var(--settings-bg)',
+					newsbg: 'var(--news-bg)'
 				}
 			}
 		}

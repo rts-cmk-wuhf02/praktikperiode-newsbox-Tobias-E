@@ -1,18 +1,30 @@
 <%- include('../partials/head') -%>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
 
 <body class="bg-utility-settingsbg">
-    <header
-        class="header flex items-center justify-between flex-row py-5 px-5 border-solid border-border-grey border-b bg-white">
+    <header class="bg-utility-newsbg header flex items-center justify-between flex-row py-5 px-5 border-solid border-b">
         <a href="../index.html">
-            <img src="../assets/images/icn_back.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="10.823" height="16.857" viewBox="0 0 10.823 16.857">
+                <g id="icn_back" transform="translate(41.596 42.892) rotate(180)">
+                    <line id="Line_17" data-name="Line 17" y1="6.981" x2="8" transform="translate(32.185 34.5)"
+                        fill="none" stroke="#324755" stroke-linecap="round" stroke-width="2" />
+                    <path id="Path_44" data-name="Path 44" d="M1.079-.035,9,7" transform="translate(31.185 27.481)"
+                        fill="#324755" stroke="#334856" stroke-linecap="round" stroke-width="2" />
+                </g>
+            </svg>
         </a>
-        <h3 class="text-18px font-bold">News settings</h3>
+        <h3 class="text-18px text-typography-onyx font-bold">News settings</h3>
         <a href="">
-            <img src="../assets/images/ic_settings_24px.svg" alt="">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19.454" height="20" viewBox="0 0 19.454 20">
+                <path id="ic_settings_24px"
+                    d="M19.43,12.98A7.793,7.793,0,0,0,19.5,12a7.793,7.793,0,0,0-.07-.98l2.11-1.65a.5.5,0,0,0,.12-.64l-2-3.46a.5.5,0,0,0-.61-.22l-2.49,1a7.306,7.306,0,0,0-1.69-.98l-.38-2.65A.488.488,0,0,0,14,2H10a.488.488,0,0,0-.49.42L9.13,5.07a7.683,7.683,0,0,0-1.69.98l-2.49-1a.488.488,0,0,0-.61.22l-2,3.46a.493.493,0,0,0,.12.64l2.11,1.65A7.931,7.931,0,0,0,4.5,12a7.931,7.931,0,0,0,.07.98L2.46,14.63a.5.5,0,0,0-.12.64l2,3.46a.5.5,0,0,0,.61.22l2.49-1a7.306,7.306,0,0,0,1.69.98l.38,2.65A.488.488,0,0,0,10,22h4a.488.488,0,0,0,.49-.42l.38-2.65a7.683,7.683,0,0,0,1.69-.98l2.49,1a.488.488,0,0,0,.61-.22l2-3.46a.5.5,0,0,0-.12-.64ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                    transform="translate(-2.271 -2)" fill="#324755" />
+            </svg>
         </a>
     </header>
     <main class="bg-utility-settingsbg">
-        <div class="bg-utility-settingsbg flex flex-col items-center py-4">
+        <div class="flex flex-col items-center py-4">
             <h1 class="text-30px font-bold text-primary-sage">Manage</h1>
             <h3 class="text-20px text-typography-grey">Categories</h3>
         </div>
@@ -54,14 +66,16 @@
             </li>
         </ul>
         <div class="flex flex-col items-center pt-16">
-            <h3
-                class="uppercase flex self-center text-14px tracking-widest border border-secondary-fossil p-4 rounded-full">
+            <button
+                class="theme-toggle uppercase flex self-center text-14px tracking-widest border border-secondary-fossil p-4 rounded-full text-typography-onyx focus:outline-none">
                 Toggle
                 Dark
-                Mode</h3>
-            <p class="text-typography-slate pt-6">Version 4.8.15.16.23.42</p>
+                Mode</button>
+            <p class="text-typography-slate pt-6 font-light">Version 4.8.15.16.23.42</p>
         </div>
     </main>
 
+    <script src="../assets/javascript/toggleTheme.js"></script>
+    <script src="../assets/javascript/getTheme.js"></script>
 
     <%- include('../partials/after-footer') -%>

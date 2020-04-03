@@ -1,5 +1,12 @@
 @import "base";
 
+/* * {
+    transition: .3s ease-in-out;
+}
+ */
+button {
+    -webkit-tap-highlight-color: transparent;
+}
 
 .input::placeholder {
     font-weight: 300;
@@ -9,4 +16,41 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+
+[data-theme="light"] {
+    --settings-bg: #ECEFF0;
+    --news-bg: #FFFFFF;
+    --slate: #6E8CA0;
+    --ice: #F0F3F4;
+    --snow: #FFFFFF;
+    --onyx: #1B1C20;
+    --typography-grey: #707070;
+    --svg-fill: #FFFFFF;
+    --settings-icon: #324755;
+
+}
+
+[data-theme="dark"] {
+    --settings-bg: rgb(69, 71, 71);
+    --news-bg: rgb(69, 71, 71);
+    --slate: rgb(151, 157, 161);
+    --ice: rgb(200, 202, 202);
+    --snow: #000;
+    --onyx: #FFFFFF;
+    --typography-grey: #dfdede;
+    --svg-fill: #FFFFFF;
+    --settings-icon: #FFFFFF;
+
+}
+
+#ic_settings_24px {
+    fill: var(--settings-icon)
+}
+
+#icn_back path,
+line,
+#icn_inbox_dark path {
+    stroke: var(--settings-icon);
 }
