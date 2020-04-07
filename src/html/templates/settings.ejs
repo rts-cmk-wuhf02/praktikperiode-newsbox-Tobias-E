@@ -28,42 +28,15 @@
             <h1 class="text-30px font-bold text-primary-sage">Manage</h1>
             <h3 class="text-20px text-typography-grey">Categories</h3>
         </div>
-        <ul class="round bg-utility-newsbg mx-4 rounded-12px shadow-sm border border-secondary-ice mt-10">
-            <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
+        <ul
+            class="categoryContainer round bg-utility-newsbg mx-4 rounded-12px shadow-sm border border-secondary-ice mt-10">
+            <!--             <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
                 <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
                 <div
-                    class="bg-utility-bordergrey border-2 rounded-full border-utility-bordergrey flex items-center cursor-pointer w-12 justify-start">
+                    class="toggleStatus transition duration-500 bg-utility-bordergrey border-2 rounded-full border-utility-bordergrey flex items-center cursor-pointer w-12 justify-start">
                     <span class="bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
                 </div>
-            </li>
-            <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
-                <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
-                <div
-                    class="bg-primary-sage border-primary-sage border-2 rounded-full flex items-center cursor-pointer w-12 justify-end">
-                    <span class="bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
-                </div>
-            </li>
-            <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
-                <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
-                <div
-                    class="bg-primary-sage border-primary-sage border-2 rounded-full flex items-center cursor-pointer w-12 justify-end">
-                    <span class="bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
-                </div>
-            </li>
-            <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
-                <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
-                <div
-                    class="bg-primary-sage border-primary-sage border-2 rounded-full flex items-center cursor-pointer w-12 justify-end">
-                    <span class="bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
-                </div>
-            </li>
-            <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
-                <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
-                <div
-                    class="bg-primary-sage border-primary-sage border-2 rounded-full flex items-center cursor-pointer w-12 justify-end">
-                    <span class="bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
-                </div>
-            </li>
+            </li> -->
         </ul>
         <div class="flex flex-col items-center pt-16">
             <button
@@ -75,7 +48,17 @@
         </div>
     </main>
 
-    <script src="../assets/javascript/toggleTheme.js"></script>
-    <script src="../assets/javascript/getTheme.js"></script>
+    <template class="categoryTemplate">
+        <li class="flex flex-row justify-between p-5 border-b border-secondary-ice">
+            <h3 class="text-15px text-typography-onyx font-bold uppercase">Category</h3>
+            <div
+                class="toggleStatus transition duration-500 bg-primary-sage border-primary-sage border-2 rounded-full flex items-center cursor-pointer w-12 justify-end">
+                <span class="toggle bg-white w-6 h-6 rounded-full shadow-md shadow"></span>
+            </div>
+        </li>
+    </template>
+
+    <script type='module' src="../assets/javascript/settings.js" defer></script>
+    <script type='module' src="../assets/javascript/common.js"></script>
 
     <%- include('../partials/after-footer') -%>
