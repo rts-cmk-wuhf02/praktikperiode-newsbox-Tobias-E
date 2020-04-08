@@ -1,3 +1,4 @@
+// Define theme
 function detectColorTheme() {
 	const fetchTheme = window.localStorage.getItem('theme');
 
@@ -11,29 +12,35 @@ function detectColorTheme() {
 }
 detectColorTheme();
 
-let categories = [
-	{
-		name: 'Technology',
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml'
+// Categories
+let categories = {
+	TECHNOLOGY: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml',
+		show: true
 	},
-	{
-		name: 'Europe',
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml'
+	EUROPE: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Europe.xml',
+		show: true
 	},
-	{
-		name: 'Sports',
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml'
+	SPORTS: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
+		show: true
 	},
-	{
-		name: 'Science',
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Science.xml'
+	SCIENCE: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
+		show: true
 	},
-	{
-		name: 'Business',
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml'
+	BUSINESS: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+		show: true
 	}
-];
+};
+// Send categories to localStorage, when first visit.
+if (!localStorage.getItem('categories')) {
+	localStorage.setItem('categories', JSON.stringify(categories));
+}
 
+// Convert XML to JSON
 function xmlToJson(xml) {
 	// Create the return object
 	var obj = {};
@@ -78,10 +85,10 @@ async function test() {
 	const result = await response.text();
 	let xmlnode = new window.DOMParser().parseFromString(result, 'text/xml');
 	let data = xmlToJson(xmlnode);
-	//console.log(data.rss.channel.item[0]);
+	console.log(data.rss.channel.item[0]);
+	console.log(data.rss.channel.title);
+	console.log(data.rss);
+	console.log(data);
 	return data;
 }
 test();
-
-// Exports
-export { categories };
