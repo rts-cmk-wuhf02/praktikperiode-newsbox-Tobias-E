@@ -26,12 +26,12 @@ let categories = {
 		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
 		show: true
 	},
-	SCIENCE: {
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Science.xml',
+	ARTS: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
 		show: true
 	},
-	BUSINESS: {
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Business.xml',
+	WORLD: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/World.xml',
 		show: true
 	}
 };
@@ -79,16 +79,16 @@ function xmlToJson(xml) {
 	}
 	return obj;
 }
-
+// Test!
 async function test() {
 	const response = await fetch('https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml');
 	const result = await response.text();
 	let xmlnode = new window.DOMParser().parseFromString(result, 'text/xml');
 	let data = xmlToJson(xmlnode);
-	console.log(data.rss.channel.item[0]);
+	/* 	console.log(data.rss.channel.item[0]);
 	console.log(data.rss.channel.title);
 	console.log(data.rss);
-	console.log(data);
+	console.log(data); */
 	return data;
 }
 test();

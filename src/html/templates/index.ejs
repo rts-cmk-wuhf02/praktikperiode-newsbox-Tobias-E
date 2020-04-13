@@ -40,36 +40,51 @@
             </div>
         </form>
     </div>
-    <div class="bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
-        <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
-            <img src="./assets/images/icn_surfing.svg" alt="">
-        </div>
-        <div class="flex flex-row justify-between content-center w-5/6">
-            <h3 class="text-15px text-typography-onyx font-bold">Category</h3>
-            <svg class="transform -rotate-90 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" width="10.823"
-                height="16.857" viewBox="0 0 10.823 16.857">
-                <g id="icn_back" transform="translate(41.596 42.892) rotate(180)">
-                    <line id="Line_17" data-name="Line 17" y1="6.981" x2="8" transform="translate(32.185 34.5)"
-                        fill="none" stroke="#324755" stroke-linecap="round" stroke-width="2" />
-                    <path id="Path_44" data-name="Path 44" d="M1.079-.035,9,7" transform="translate(31.185 27.481)"
-                        fill="#324755" stroke="#334856" stroke-linecap="round" stroke-width="2" />
-                </g>
-            </svg>
-        </div>
-    </div>
-    <ul class="border-solid border-utility-bordergrey border-b">
-        <li class="w-full max-w-sm flex flex-row">
-            <img src="./assets/images/image_21.svg" alt="" class="m-4">
-            <article class="mr-4 my-4">
-                <h4 class="font-bold text-typography-onyx text-15px">Heading</h4>
-                <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem, ipsum dolor sit
-                    amet
-                    consectetur
-                    adipisicing elit.
-                    Architecto voluptatem quis mollitia iure? Totam provident praesentium ea fugit saepe! Dolorum!
-                </p>
-            </article>
-        </li>
-    </ul>
-    <script type='module' src="./assets/javascript/common.js"></script>
+    <main class="main">
+        <template class="categoryContainerTemplate">
+            <div
+                class="main__categoryContainer bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
+                <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
+                    <img src="./assets/images/icn_surfing.svg" alt="">
+                </div>
+                <div class="flex flex-row justify-between content-center w-5/6">
+                    <h3 class="text-15px text-typography-onyx font-bold">Category</h3>
+                    <svg class="transform -rotate-90 mr-1 mt-1" xmlns="http://www.w3.org/2000/svg" width="10.823"
+                        height="16.857" viewBox="0 0 10.823 16.857">
+                        <g id="icn_back" transform="translate(41.596 42.892) rotate(180)">
+                            <line id="Line_17" data-name="Line 17" y1="6.981" x2="8" transform="translate(32.185 34.5)"
+                                fill="none" stroke="#324755" stroke-linecap="round" stroke-width="2" />
+                            <path id="Path_44" data-name="Path 44" d="M1.079-.035,9,7"
+                                transform="translate(31.185 27.481)" fill="#324755" stroke="#334856"
+                                stroke-linecap="round" stroke-width="2" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </template>
+
+        <template class="articleTemplate">
+            <a href="" target="_blank">
+                <li class="w-full max-w-sm flex flex-row">
+                    <img src="./assets/images/image_21.svg" alt="" class="m-4 rounded-full w-18 h-18">
+                    <article class="mr-4 my-4">
+                        <h4 class="font-bold text-typography-onyx text-15px line-clamp overflow-hidden">Heading</h4>
+                        <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem, ipsum
+                            dolor
+                            sit
+                            amet
+                            consectetur
+                            adipisicing elit.
+                            Architecto voluptatem quis mollitia iure? Totam provident praesentium ea fugit saepe!
+                            Dolorum!
+                        </p>
+                    </article>
+                </li>
+            </a>
+        </template>
+        <!--  <ul class="articleContainer border-solid border-utility-bordergrey border-b">
+        </ul> -->
+    </main>
+    <script src="./assets/javascript/common.js"></script>
+    <script type='module' src="./assets/javascript/articles.js"></script>
     <%- include('../partials/after-footer') -%>
