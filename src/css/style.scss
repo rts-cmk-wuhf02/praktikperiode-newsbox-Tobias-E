@@ -56,3 +56,7 @@ line,
 #icn_inbox_dark path {
     stroke: var(--settings-icon);
 }
+
+.main__categoryContainer>* {
+    pointer-events: none;
+}
