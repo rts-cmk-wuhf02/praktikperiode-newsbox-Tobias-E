@@ -57,6 +57,14 @@ line,
     stroke: var(--settings-icon);
 }
 
+#icn_inbox_white path {
+    stroke: var(--snow);
+}
+
 .main__categoryContainer>* {
+    pointer-events: none;
+}
+
+.article>* {
     pointer-events: none;
 }

@@ -32,7 +32,7 @@
             </svg>
         </a>
     </header>
-    <div class="bg-utility-newsbg p-4">
+    <div class="bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b">
         <form class="w-full max-w-sm">
             <div class="flex justify-between items-center  bg-utility-inputgrey rounded p-2">
                 <input type="text" placeholder='Search news' class="input pl-5 outline-none bg-utility-inputgrey">
@@ -40,10 +40,10 @@
             </div>
         </form>
     </div>
-    <main class="main">
+    <main class="main relative mb-48 overflow-hidden">
         <template class="categoryContainerTemplate">
             <div
-                class="main__categoryContainer bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-t border-b flex flex-row items-center ">
+                class="main__categoryContainer bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
                 <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
                     <img src="./assets/images/icn_surfing.svg" alt="">
                 </div>
@@ -61,12 +61,13 @@
         </template>
 
         <template class="articleTemplate">
-            <a href="" target="_blank">
+            <a href="" target="_blank" class="article flex flex-row border-solid border-utility-bordergrey border-b">
                 <div class="w-full max-w-sm flex flex-row">
                     <img src="./assets/images/image_21.svg" alt="" class="m-4 rounded-full w-18 h-18">
                     <article class="mr-4 my-4">
                         <h4 class="font-bold text-typography-onyx text-15px line-clamp overflow-hidden">Heading</h4>
-                        <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem, ipsum
+                        <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem,
+                            ipsum
                             dolor
                             sit
                             amet
@@ -77,10 +78,29 @@
                         </p>
                     </article>
                 </div>
+                <button class="bg-primary-sage absolute -right-20 h-full w-20 m-0 flex justify-center items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
+                        height="18" viewBox="0 0 20 18">
+                        <defs>
+                            <clipPath id="clip-path">
+                                <rect width="20" height="18" fill="none" />
+                            </clipPath>
+                        </defs>
+                        <g id="icn_inbox_white" clip-path="url(#clip-path)">
+                            <path id="Path_57" data-name="Path 57" d="M6,10H1c.7-3.3,1.3-5.7,2-9H17l2,9H15" fill="none"
+                                stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                stroke-width="2" />
+                            <path id="Path_58" data-name="Path 58" d="M12,10h7v7H1V10H8" fill="none" stroke="#324755"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                stroke-width="2" />
+                            <path id="Path_59" data-name="Path 59" d="M8,10a2,2,0,0,0,4,0" fill="none" stroke="#324755"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                                stroke-width="2" />
+                        </g>
+                    </svg>
+                </button>
             </a>
         </template>
-        <!--  <ul class="articleContainer border-solid border-utility-bordergrey border-b">
-        </ul> -->
     </main>
     <script src="./assets/javascript/common.js"></script>
     <script type='module' src="./assets/javascript/articles.js"></script>

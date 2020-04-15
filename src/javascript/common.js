@@ -26,8 +26,8 @@ let categories = {
 		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Sports.xml',
 		show: true
 	},
-	ARTS: {
-		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Arts.xml',
+	HEALTH: {
+		url: 'https://rss.nytimes.com/services/xml/rss/nyt/Health.xml',
 		show: true
 	},
 	WORLD: {

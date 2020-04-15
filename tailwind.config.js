@@ -1,8 +1,14 @@
 module.exports = {
 	theme: {
 		extend: {
+			zIndex: {
+				'-10': '-10'
+			},
+			inset: {
+				'-20': '-25%'
+			},
 			spacing: {
-				18: '4.5rem'
+				'18': '4.5rem'
 			},
 			borderRadius: {
 				'12px': '0.75rem'

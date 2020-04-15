@@ -5,8 +5,6 @@ const connect = require('gulp-connect');
 const sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
 const postcss = require('gulp-postcss');
-// const tailwindcss = require('tailwindcss');
-// const autoprefixer = require('autoprefixer');
 
 sass.compiler = require('node-sass');
 
@@ -55,17 +53,6 @@ function watchJavascript() {
 	gulp.watch('./src/javascript/**/*.js', { ignoreInitial: false }, javascript);
 }
 
-/* function json(done) {
-	gulp.src('./src/json/*.json')
-		.pipe(gulp.dest('./dist/data'))
-		.pipe(connect.reload());
-	done();
-}
-
-function watchJson() {
-	gulp.watch('./src/json/*.json', { ignoreInitial: false }, json);
-} */
-
 function images(done) {
 	gulp.src('./src/images/*')
 		.pipe(imagemin())
@@ -95,7 +82,6 @@ gulp.task('build', function(done) {
 	html(done);
 	scss(done);
 	javascript(done);
-	//json(done);
 	images(done);
 	done();
 });

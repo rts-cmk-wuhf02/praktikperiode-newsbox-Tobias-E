@@ -1,7 +1,4 @@
 import xmlToJson from './xmlConvert.js';
-// Check if its iOS
-/* var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-console.log(iOS); */
 
 document.addEventListener('DOMContentLoaded', async function() {
 	// Queries
@@ -21,29 +18,48 @@ document.addEventListener('DOMContentLoaded', async function() {
 	const jsons = await fetchJsons(visibility(categoryArr));
 
 	jsons.forEach(([key, value]) => {
+		console.log(key);
 		let clone = categoryContainerTemplate.content.cloneNode(true);
 		clone.querySelector('h3').innerHTML = key;
 		main.appendChild(clone);
 		articleCreator(value, articleTemplate, main, articleCount);
 	});
 
-	console.log(document.querySelectorAll('.main__categoryContainer'));
 	// Event listeners
 	main.addEventListener('click', (e) => {
 		if (e.target.classList.contains('main__categoryContainer')) {
 			if (e.target.querySelector('svg').classList.contains('-rotate-90')) {
-				e.target.classList.remove('border-b');
 				e.target.querySelector('svg').classList.remove('-rotate-90');
 				e.target.querySelector('svg').classList.add('-rotate-180');
 				articleHide(e, articleCount);
 			} else {
-				e.target.classList.add('border-b');
 				e.target.querySelector('svg').classList.add('-rotate-90');
 				e.target.querySelector('svg').classList.remove('-rotate-180');
 				articleShow(e, articleCount);
 			}
 		}
 	});
+
+	// Article swipe gesture
+	let touchstartX = 0;
+	let touchendX = 0;
+
+	main.addEventListener(
+		'touchstart',
+		function(e) {
+			touchstartX = e.changedTouches[0].screenX;
+		},
+		false
+	);
+
+	main.addEventListener(
+		'touchend',
+		function(e) {
+			touchendX = e.changedTouches[0].screenX;
+			handleGesture(e, touchendX, touchstartX);
+		},
+		false
+	);
 });
 
 // Checks if the category is turned off in settings
@@ -92,6 +108,9 @@ function articleCreator(data, articleTemplate, main, articleCount) {
 function articleHide(e, articleCount) {
 	let child = e.target;
 	for (let step = 0; step < articleCount; step++) {
+		if (child.nextElementSibling.classList.contains('relative', '-left-20')) {
+			child.nextElementSibling.classList.remove('relative', '-left-20');
+		}
 		child.nextElementSibling.classList.add('invisible', 'absolute');
 		child = child.nextElementSibling;
 	}
@@ -102,5 +121,19 @@ function articleShow(e, articleCount) {
 	for (let step = 0; step < articleCount; step++) {
 		child.nextElementSibling.classList.remove('invisible', 'absolute');
 		child = child.nextElementSibling;
+	}
+}
+
+// Article swipe gesture
+function handleGesture(e, touchendX, touchstartX) {
+	if (touchendX + 50 < touchstartX) {
+		if (e.target.classList.contains('article')) {
+			e.target.classList.add('relative', '-left-20');
+		}
+	}
+	if (touchstartX + 50 < touchendX) {
+		if (e.target.classList.contains('article')) {
+			e.target.classList.remove('relative', '-left-20');
+		}
 	}
 }
