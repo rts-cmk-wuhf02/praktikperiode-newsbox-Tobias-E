@@ -1,13 +1,28 @@
 import xmlToJson from './xmlConvert.js';
 
 document.addEventListener('DOMContentLoaded', async function() {
+	/* db.collection('TECHNOLOGY')
+		.doc()
+		.onSnapshot(function(doc) {
+			console.log('Current data: ', doc.data());
+		}); */
+
+	// Get every doc in collection
+	/* db.collection(collection)
+		.get()
+		.then(function(querySnapshot) {
+			querySnapshot.forEach(function(doc) {
+				console.log(doc.id, '___', doc.data());
+			});
+		}); */
+
 	// Queries
 	const main = document.querySelector('.main');
 	const categoryContainerTemplate = document.querySelector('.categoryContainerTemplate');
 	const articleTemplate = document.querySelector('.articleTemplate');
 
 	// Define how many articles there is for every category
-	const articleCount = 2;
+	const articleCount = 4;
 
 	// Get localstorage & convert to array
 	let localCategories = localStorage.getItem('categories');
@@ -16,9 +31,9 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 	// Creating categories & articles
 	const jsons = await fetchJsons(visibility(categoryArr));
+	console.log(jsons);
 
 	jsons.forEach(([key, value]) => {
-		console.log(key);
 		let clone = categoryContainerTemplate.content.cloneNode(true);
 		clone.querySelector('h3').innerHTML = key;
 		main.appendChild(clone);
@@ -26,6 +41,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 	});
 
 	// Event listeners
+
+	// Category show/hide articles
 	main.addEventListener('click', (e) => {
 		if (e.target.classList.contains('main__categoryContainer')) {
 			if (e.target.querySelector('svg').classList.contains('-rotate-90')) {
@@ -60,6 +77,19 @@ document.addEventListener('DOMContentLoaded', async function() {
 		},
 		false
 	);
+
+	// Archive button
+	main.addEventListener('click', (e) => {
+		if (e.target.classList.contains('archiveBtn')) {
+			const db = firebase.firestore();
+			const title = e.target.previousElementSibling.children[1].children[0].innerHTML;
+			const description = e.target.previousElementSibling.children[1].children[1].innerHTML;
+			const img = e.target.previousElementSibling.children[0].src;
+			const link = e.target.previousElementSibling.href;
+			archiveArticle(db, findCategory(e, articleCount), title, description, img, link);
+			e.target.parentElement.classList.remove('relative', '-left-20');
+		}
+	});
 });
 
 // Checks if the category is turned off in settings
@@ -127,13 +157,43 @@ function articleShow(e, articleCount) {
 // Article swipe gesture
 function handleGesture(e, touchendX, touchstartX) {
 	if (touchendX + 50 < touchstartX) {
-		if (e.target.classList.contains('article')) {
-			e.target.classList.add('relative', '-left-20');
+		if (e.target.classList.contains('article__link')) {
+			e.target.parentElement.classList.add('relative', '-left-20');
 		}
 	}
 	if (touchstartX + 50 < touchendX) {
-		if (e.target.classList.contains('article')) {
-			e.target.classList.remove('relative', '-left-20');
+		if (e.target.classList.contains('article__link')) {
+			e.target.parentElement.classList.remove('relative', '-left-20');
 		}
 	}
+}
+
+// Find category name (archiveBtn)
+
+function findCategory(e, articleCount) {
+	let sibling = e.target.parentElement.previousElementSibling;
+	for (let i = 0; i < articleCount; i++) {
+		if (sibling.classList.contains('main__categoryContainer')) {
+			break;
+		}
+		sibling = sibling.previousElementSibling;
+	}
+	return sibling.children[1].children[0].innerHTML;
+}
+
+// Save article to Firebase
+function archiveArticle(db, category, title, description, img, link) {
+	db.collection(category)
+		.add({
+			title: title,
+			description: description,
+			img: img,
+			link: link
+		})
+		.then(function(docRef) {
+			console.log('Document written with ID: ', docRef.id);
+		})
+		.catch(function(error) {
+			console.error('Error adding document: ', error);
+		});
 }

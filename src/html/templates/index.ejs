@@ -41,67 +41,66 @@
         </form>
     </div>
     <main class="main relative mb-48 overflow-hidden">
-        <template class="categoryContainerTemplate">
-            <div
-                class="main__categoryContainer bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
-                <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
-                    <img src="./assets/images/icn_surfing.svg" alt="">
-                </div>
-                <div class="flex flex-row justify-between content-center w-5/6">
-                    <h3 class="text-15px text-typography-onyx font-bold">Category</h3>
-                    <svg class="transform -rotate-90 mr-1 mt-1 duration-100" xmlns="http://www.w3.org/2000/svg"
-                        width="18" height="16" viewBox="0 0 16 16">
-                        <g stroke="#324755" stroke-linecap="round" stroke-width="2">
-                            <line x1="2" y1="8" x2="10" y2="2" />
-                            <line x1="2" y1="8" x2="10" y2="14" />
-                        </g>
-                    </svg>
-                </div>
-            </div>
-        </template>
-
-        <template class="articleTemplate">
-            <a href="" target="_blank" class="article flex flex-row border-solid border-utility-bordergrey border-b">
-                <div class="w-full max-w-sm flex flex-row">
-                    <img src="./assets/images/image_21.svg" alt="" class="m-4 rounded-full w-18 h-18">
-                    <article class="mr-4 my-4">
-                        <h4 class="font-bold text-typography-onyx text-15px line-clamp overflow-hidden">Heading</h4>
-                        <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem,
-                            ipsum
-                            dolor
-                            sit
-                            amet
-                            consectetur
-                            adipisicing elit.
-                            Architecto voluptatem quis mollitia iure? Totam provident praesentium ea fugit saepe!
-                            Dolorum!
-                        </p>
-                    </article>
-                </div>
-                <button class="bg-primary-sage absolute -right-20 h-full w-20 m-0 flex justify-center items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
-                        height="18" viewBox="0 0 20 18">
-                        <defs>
-                            <clipPath id="clip-path">
-                                <rect width="20" height="18" fill="none" />
-                            </clipPath>
-                        </defs>
-                        <g id="icn_inbox_white" clip-path="url(#clip-path)">
-                            <path id="Path_57" data-name="Path 57" d="M6,10H1c.7-3.3,1.3-5.7,2-9H17l2,9H15" fill="none"
-                                stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                stroke-width="2" />
-                            <path id="Path_58" data-name="Path 58" d="M12,10h7v7H1V10H8" fill="none" stroke="#324755"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                stroke-width="2" />
-                            <path id="Path_59" data-name="Path 59" d="M8,10a2,2,0,0,0,4,0" fill="none" stroke="#324755"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
-                                stroke-width="2" />
-                        </g>
-                    </svg>
-                </button>
-            </a>
-        </template>
     </main>
-    <script src="./assets/javascript/common.js"></script>
-    <script type='module' src="./assets/javascript/articles.js"></script>
+    <template class="categoryContainerTemplate">
+        <div
+            class="main__categoryContainer bg-utility-newsbg p-4 border-solid border-utility-bordergrey border-b flex flex-row items-center ">
+            <div class="rounded-full shadow-lg flex items-center justify-center p-2 mx-2">
+                <img src="./assets/images/icn_surfing.svg" alt="">
+            </div>
+            <div class="flex flex-row justify-between content-center w-5/6">
+                <h3 class="text-15px text-typography-onyx font-bold">Category</h3>
+                <svg class="transform -rotate-90 mr-1 mt-1 duration-100" xmlns="http://www.w3.org/2000/svg" width="18"
+                    height="16" viewBox="0 0 16 16">
+                    <g stroke="#324755" stroke-linecap="round" stroke-width="2">
+                        <line x1="2" y1="8" x2="10" y2="2" />
+                        <line x1="2" y1="8" x2="10" y2="14" />
+                    </g>
+                </svg>
+            </div>
+        </div>
+    </template>
+
+    <template class="articleTemplate">
+        <div class="article flex flex-row border-solid border-utility-bordergrey border-b">
+            <a href="" target="_blank" class="article__link w-full max-w-sm flex flex-row">
+                <img src="./assets/images/image_21.svg" alt="" class="m-4 rounded-full w-18 h-18">
+                <article class="mr-4 my-4">
+                    <h4 class="font-bold text-typography-onyx text-15px line-clamp overflow-hidden">Heading</h4>
+                    <p class="line-clamp overflow-hidden text-14px font-light text-typography-pblue">Lorem,
+                        ipsum
+                        dolor
+                        sit
+                        amet
+                        consectetur
+                        adipisicing elit.
+                        Architecto voluptatem quis mollitia iure? Totam provident praesentium ea fugit saepe!
+                        Dolorum!
+                    </p>
+                </article>
+            </a>
+            <button
+                class="archiveBtn bg-primary-sage absolute -right-20 h-full w-20 m-0 flex justify-center items-center focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20"
+                    height="18" viewBox="0 0 20 18">
+                    <defs>
+                        <clipPath id="clip-path">
+                            <rect width="20" height="18" fill="none" />
+                        </clipPath>
+                    </defs>
+                    <g id="icn_inbox_white" clip-path="url(#clip-path)">
+                        <path id="Path_57" data-name="Path 57" d="M6,10H1c.7-3.3,1.3-5.7,2-9H17l2,9H15" fill="none"
+                            stroke="#324755" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
+                            stroke-width="2" />
+                        <path id="Path_58" data-name="Path 58" d="M12,10h7v7H1V10H8" fill="none" stroke="#324755"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                        <path id="Path_59" data-name="Path 59" d="M8,10a2,2,0,0,0,4,0" fill="none" stroke="#324755"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" />
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </template>
+    <script src="./assets/javascript/utility.js"></script>
+    <script src="./assets/javascript/articles.js" type='module'></script>
     <%- include('../partials/after-footer') -%>

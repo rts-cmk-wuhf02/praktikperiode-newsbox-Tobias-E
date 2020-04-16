@@ -65,6 +65,10 @@ line,
     pointer-events: none;
 }
 
-.article>* {
+.article__link>* {
+    pointer-events: none;
+}
+
+.archiveBtn>* {
     pointer-events: none;
 }
