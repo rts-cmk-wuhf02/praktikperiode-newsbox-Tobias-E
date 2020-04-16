@@ -41,17 +41,14 @@ document.addEventListener('DOMContentLoaded', async function() {
 	});
 
 	// Event listeners
-
 	// Category show/hide articles
 	main.addEventListener('click', (e) => {
 		if (e.target.classList.contains('main__categoryContainer')) {
 			if (e.target.querySelector('svg').classList.contains('-rotate-90')) {
-				e.target.querySelector('svg').classList.remove('-rotate-90');
-				e.target.querySelector('svg').classList.add('-rotate-180');
+				arrowTurn(e, '-rotate-90', '-rotate-180');
 				articleHide(e, articleCount);
 			} else {
-				e.target.querySelector('svg').classList.add('-rotate-90');
-				e.target.querySelector('svg').classList.remove('-rotate-180');
+				arrowTurn(e, '-rotate-180', '-rotate-90');
 				articleShow(e, articleCount);
 			}
 		}
@@ -134,6 +131,12 @@ function articleCreator(data, articleTemplate, main, articleCount) {
 	}
 }
 
+// Turn category arrow
+function arrowTurn(e, remove, add) {
+	e.target.querySelector('svg').classList.remove(remove);
+	e.target.querySelector('svg').classList.add(add);
+}
+
 // Target all the articles in a category and hide them
 function articleHide(e, articleCount) {
 	let child = e.target;
@@ -169,7 +172,6 @@ function handleGesture(e, touchendX, touchstartX) {
 }
 
 // Find category name (archiveBtn)
-
 function findCategory(e, articleCount) {
 	let sibling = e.target.parentElement.previousElementSibling;
 	for (let i = 0; i < articleCount; i++) {
