@@ -62,8 +62,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 	// Delete button
 	main.addEventListener('click', async (e) => {
 		if (e.target.classList.contains('archiveBtn')) {
-			console.log(e.target.parentElement.getAttribute('data-id'));
 			const id = e.target.parentElement.getAttribute('data-id');
+			if (!e.target.parentElement.nextElementSibling && e.target.parentElement.previousElementSibling.classList.contains('main__categoryContainer')) {
+				e.target.parentElement.previousElementSibling.remove();
+			}
 			if (
 				e.target.parentElement.previousElementSibling.classList.contains('main__categoryContainer') &&
 				e.target.parentElement.nextElementSibling.classList.contains('main__categoryContainer')

@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 
 	// Creating categories & articles
 	const jsons = await fetchJsons(visibility(categoryArr));
-	console.log(jsons);
 
 	jsons.forEach(([key, value]) => {
 		let clone = categoryContainerTemplate.content.cloneNode(true);
