@@ -5,7 +5,7 @@ module.exports = {
 				'-10': '-10'
 			},
 			inset: {
-				'-20': '-25%'
+				'-20': '-5rem'
 			},
 			spacing: {
 				'18': '4.5rem'
