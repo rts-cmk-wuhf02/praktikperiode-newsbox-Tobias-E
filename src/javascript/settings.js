@@ -44,21 +44,21 @@ container.addEventListener('click', (e) => {
 		if (e.target.classList.contains('bg-utility-bordergrey')) {
 			e.target.classList.remove('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
 			e.target.classList.add('bg-primary-sage', 'border-primary-sage', 'justify-end');
-			showTrue(e);
+			showTrue(e, localCategories);
 		} else {
 			e.target.classList.remove('bg-primary-sage', 'border-primary-sage', 'justify-end');
 			e.target.classList.add('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
-			showFalse(e);
+			showFalse(e, localCategories);
 		}
 	} else if (e.target.parentElement.classList.contains('toggleStatus')) {
 		if (e.target.parentElement.classList.contains('bg-utility-bordergrey')) {
 			e.target.parentElement.classList.remove('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
 			e.target.parentElement.classList.add('bg-primary-sage', 'border-primary-sage', 'justify-end');
-			showTrueChild(e);
+			showTrueChild(e, localCategories);
 		} else {
 			e.target.parentElement.classList.remove('bg-primary-sage', 'border-primary-sage', 'justify-end');
 			e.target.parentElement.classList.add('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
-			showFalseChild(e);
+			showFalseChild(e, localCategories);
 		}
 	}
 });
@@ -66,21 +66,25 @@ container.addEventListener('click', (e) => {
 // Functions
 function showTrue(e) {
 	let categories = localCategories;
-	categories[e.target.parentElement.innerText].show = true;
+	let target = e.target.parentElement.innerText.trim();
+	categories[target].show = true;
 	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showFalse(e) {
 	let categories = localCategories;
-	categories[e.target.parentElement.innerText].show = false;
+	let target = e.target.parentElement.innerText.trim();
+	categories[target].show = false;
 	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showTrueChild(e) {
 	let categories = localCategories;
-	categories[e.target.parentElement.parentElement.innerText].show = true;
+	let target = e.target.parentElement.parentElement.innerText.trim();
+	categories[target].show = true;
 	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showFalseChild(e) {
 	let categories = localCategories;
-	categories[e.target.parentElement.parentElement.innerText].show = false;
+	let target = e.target.parentElement.parentElement.innerText.trim();
+	categories[target].show = false;
 	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
