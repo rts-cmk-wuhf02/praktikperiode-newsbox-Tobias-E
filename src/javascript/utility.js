@@ -36,6 +36,6 @@ let categories = {
 	}
 };
 // Send categories to localStorage, when first visit.
-if (!localStorage.getItem('categories')) {
-	localStorage.setItem('categories', JSON.stringify(categories));
+if (!window.localStorage.getItem('categories')) {
+	window.localStorage.setItem('categories', JSON.stringify(categories));
 }

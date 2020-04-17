@@ -4,9 +4,8 @@ const container = document.querySelector('.categoryContainer');
 const template = document.querySelector('.categoryTemplate');
 
 // Get localstorage
-let localCategories = localStorage.getItem('categories');
+let localCategories = window.localStorage.getItem('categories');
 localCategories = JSON.parse(localCategories);
-// console.log(localCategories);
 
 // Set categories
 let updatedCategories = Object.entries(localCategories);
@@ -17,9 +16,7 @@ updatedCategories.forEach(([key, value]) => {
 
 	if (value.show == false) {
 		clone.querySelector('.toggleStatus').classList.remove('bg-primary-sage', 'border-primary-sage', 'justify-end');
-		clone
-			.querySelector('.toggleStatus')
-			.classList.add('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
+		clone.querySelector('.toggleStatus').classList.add('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
 	}
 	container.appendChild(clone);
 });
@@ -55,11 +52,7 @@ container.addEventListener('click', (e) => {
 		}
 	} else if (e.target.parentElement.classList.contains('toggleStatus')) {
 		if (e.target.parentElement.classList.contains('bg-utility-bordergrey')) {
-			e.target.parentElement.classList.remove(
-				'bg-utility-bordergrey',
-				'border-utility-bordergrey',
-				'justify-start'
-			);
+			e.target.parentElement.classList.remove('bg-utility-bordergrey', 'border-utility-bordergrey', 'justify-start');
 			e.target.parentElement.classList.add('bg-primary-sage', 'border-primary-sage', 'justify-end');
 			showTrueChild(e);
 		} else {
@@ -74,20 +67,20 @@ container.addEventListener('click', (e) => {
 function showTrue(e) {
 	let categories = localCategories;
 	categories[e.target.parentElement.innerText].show = true;
-	localStorage.setItem('categories', JSON.stringify(categories));
+	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showFalse(e) {
 	let categories = localCategories;
 	categories[e.target.parentElement.innerText].show = false;
-	localStorage.setItem('categories', JSON.stringify(categories));
+	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showTrueChild(e) {
 	let categories = localCategories;
 	categories[e.target.parentElement.parentElement.innerText].show = true;
-	localStorage.setItem('categories', JSON.stringify(categories));
+	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
 function showFalseChild(e) {
 	let categories = localCategories;
 	categories[e.target.parentElement.parentElement.innerText].show = false;
-	localStorage.setItem('categories', JSON.stringify(categories));
+	window.localStorage.setItem('categories', JSON.stringify(categories));
 }
