@@ -1,21 +1,6 @@
 import xmlToJson from './xmlConvert.js';
 
 document.addEventListener('DOMContentLoaded', async function() {
-	/* db.collection('TECHNOLOGY')
-		.doc()
-		.onSnapshot(function(doc) {
-			console.log('Current data: ', doc.data());
-		}); */
-
-	// Get every doc in collection
-	/* db.collection(collection)
-		.get()
-		.then(function(querySnapshot) {
-			querySnapshot.forEach(function(doc) {
-				console.log(doc.id, '___', doc.data());
-			});
-		}); */
-
 	// Queries
 	const main = document.querySelector('.main');
 	const categoryContainerTemplate = document.querySelector('.categoryContainerTemplate');
@@ -83,7 +68,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 			const description = e.target.previousElementSibling.children[1].children[1].innerHTML;
 			const img = e.target.previousElementSibling.children[0].src;
 			const link = e.target.previousElementSibling.href;
-			archiveArticle(db, findCategory(e, articleCount), title, description, img, link);
+			archiveArticle(db, fetchCategory(e, articleCount), title, description, img, link);
 			e.target.parentElement.classList.remove('relative', '-left-20');
 		}
 	});
@@ -171,8 +156,8 @@ function handleGesture(e, touchendX, touchstartX) {
 	}
 }
 
-// Find category name (archiveBtn)
-function findCategory(e, articleCount) {
+// Fetch category name (archiveBtn)
+function fetchCategory(e, articleCount) {
 	let sibling = e.target.parentElement.previousElementSibling;
 	for (let i = 0; i < articleCount; i++) {
 		if (sibling.classList.contains('main__categoryContainer')) {
@@ -185,13 +170,8 @@ function findCategory(e, articleCount) {
 
 // Save article to Firebase
 function archiveArticle(db, category, title, description, img, link) {
-	db.collection(category)
-		.add({
-			title: title,
-			description: description,
-			img: img,
-			link: link
-		})
+	db.collection('articles')
+		.add({ title, description, img, link, category })
 		.then(function(docRef) {
 			console.log('Document written with ID: ', docRef.id);
 		})
@@ -199,3 +179,5 @@ function archiveArticle(db, category, title, description, img, link) {
 			console.error('Error adding document: ', error);
 		});
 }
+
+// export { arrowTurn, articleHide, articleShow, handleGesture };
